@@ -16,6 +16,7 @@
     "eslint-plugin-import": "^2.13.0",
     "nodemon": "1.18.3",
     "tap-spec": "5.0.0",
-    "tape": "4.9.1"
+    "tape": "4.9.1",
+    "request": "^2.81.0"
   }
 }

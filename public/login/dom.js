@@ -19,7 +19,7 @@ const fetch =  (url, method, cb) => {
 
   window.onload = documentLoadedHandler;
 
-  const url = "https://newsapi.org/v2/top-headlines?sources=google-news&apiKey=a1c4e271af4349d8ac62aa6aceeee93e";
+  const url = "/clientApi";
 
   function documentLoadedHandler () {
     fetch( url,"GET", (res) => {
