@@ -18,9 +18,7 @@ setInterval(()=>{
   fs.writeFile('./news.json', data, (err) => {
     if (err) 
     console.log(err);
-    else{
-    return console.log('File written')
-    }
+  
   }); 
     }
   });
