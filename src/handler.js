@@ -35,11 +35,14 @@ function serveFiles(req, res) {
     css: "text/css",
     js: "application/javascript",
     ico: "image/x-icon",
-    jpg: "image/jpg"
+    jpg: "image/jpg",
+    gif:"image/gif"
   };
   fs.readFile(path.join(__dirname, "..", url), function(err, file) {
     if (err) {
       console.log(err);
+      res.writeHead(500, { "content-type": "text/plain" });
+      res.end();
     } else {
       res.writeHead(200, { "content-type": extensionType[extension] });
       res.end(file);
@@ -47,14 +50,27 @@ function serveFiles(req, res) {
   });
 }
 
+
 function handleclientApi(req, res) {
   var mainJson = require("../news.json");
     res.writeHead(200, { "content-type": "application/json" });
     res.end(JSON.stringify(mainJson));
+}
+
+function handleNotFound(req, res) {
+
+  fs.readFile(path.join(__dirname, "..", "public/notfound.html"), function(err, file) {
+    if (err) {
+      console.log(err);
+      res.writeHead(500, { "content-type": "text/plain" });
+      res.end();
+    } else {
+      res.writeHead(404);
+      res.end(file);
+    }
+  });
 
 }
 
 
-
-
-module.exports = {handleHome, handleNews, serveFiles, handleclientApi };
+module.exports = {handleHome, handleNews, serveFiles, handleclientApi,handleNotFound };

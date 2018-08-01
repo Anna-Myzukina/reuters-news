@@ -3,7 +3,7 @@
 ---
 
 # LINK:
-https://
+https://reuters-news.herokuapp.com/
 
 ---
 ![Image of test](http://www6.0zz0.com/2018/08/01/14/552753834.png)
@@ -38,15 +38,10 @@ Our website that give you ability to read recent news stories from the reuters a
 
 * public:
 
-   *  LOGIN
-           * HTML
-           * DOM
-           * CSS
-
-   *  NEWS
-           * HTML
-           * DOM
-           * CSS  
+   *  LOGIN [HTML - CSS - JS]
+        
+   *  NEWS  [HTML - CSS - JS]
+           
           
    
 * SRC:
@@ -67,6 +62,9 @@ Our website that give you ability to read recent news stories from the reuters a
 - I want to be able to read news stories from the reuters agency.
 - I would like to know what happen in the world now!!
 ---
+## Test Coverage
+![Image of test](http://www10.0zz0.com/2018/08/01/15/893440674.png)
+---
 
 ## WHAT DID WE LEARN ?
 
@@ -75,9 +73,7 @@ Our website that give you ability to read recent news stories from the reuters a
 * We learned how to run supertest.
 
 * How to use error handel.
-
 ---
-
 
 ## WHO ARE WE ?
 
