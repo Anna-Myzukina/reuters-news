@@ -10,11 +10,13 @@ const router = (req, res) => {
     handler.handleNews(req,res);
   }else if(url === '/clientApi'){
     handler.handleclientApi(req,res);
-  }else if(url.contains('public')&& rul.contains('.')){
+  }else if(url.indexOf('public')!= -1 && url.indexOf('.')!=-1){
     handler.serveFiles(req, res);
 
   }
   else{
+        handler.handleNotFound(req, res);
+
   }
 };
 
