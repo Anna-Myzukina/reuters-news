@@ -1,60 +1,73 @@
-var view = document.getElementsByClassName('container');
 
-const fetch = function (url, cb) => {
-    const xhr = new XMLHttpRequest();
-    xhr.onreadystatechange => () {
-      if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-          cb(null, JSON.parse(xhr.responseText));
-        } else {
-          consolr.log('error');
-        }
-      }
-    };
-    xhr.open('GET', url, true);
-    xhr.send();
-  };
-
-  window.onload = documentLoadedHandler;
-
-  const url = "https://newsapi.org/v2/top-headlines?sources=google-news&apiKey=a1c4e271af4349d8ac62aa6aceeee93e";
-
-  function documentLoadedHandler () {
-    fetch(url, (err, res) => {
-      if (err) {
-        document.querySelector('.container').innerHTML = '';
-        document.querySelector('.container').appendChild(noResults('reuters'));
-        return;
-      }
-      if (res) {
-        // Reset article list
-        document.querySelector('.container').innerHTML = '';
-        // Build article list
-        res.forEach(function (article) {
-          appendToDom(buildArticleElement(article, true), true);
-          if (res.articles[0]){
-            // var title = obj.articles[0].title;
-            // var title1 = document.createElement('h3');
-            //     title1.innerHTML = title;
-            var image = res.articles[0].urlToImage;
-            var image = document.createElement("img");
-            image.src = image1;
-            view.appendChild(image);
-            var hr = create('hr');
-            view.appendChild(hr);
-            for (var i = 0 ; i < 10 ; i++){
-                var name = res.articles[0].title[i];
-                var li = create("LI");
-                var newLink = create("a");
-                newLink.setAttribute('href', '#');
-                newLink.innerHTML = name;
-                view.appendChild(li);
-                li.appendChild(newLink);
-
-            }
-        });
-      })
-      
-
+const fetch =  (url, method, cb) => {
+  const xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = ()=> {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        cb(xhr.responseText);
     }
+  };
 }
+  xhr.open(method, url, true);
+  xhr.send();
+};
+
+var container = document.querySelector('.container')
+container.innerHTML = '';
+
+window.onload = documentLoadedHandler;
+
+function documentLoadedHandler () {
+  fetch( "/clientApi","GET", (res) => {
+    var results = JSON.parse(res);
+    if(results.articles.length>0){
+      results.articles.forEach(function (article) {
+        buildArticleElement(article, (err, result)=>{
+           if(err){
+             console.log(err.message);
+           } 
+           else{
+            container.appendChild(result);
+           }
+        });
+        });
+      }
+  })
+}
+
+
+
+function buildArticleElement(article,cb){
+
+if(!article){
+  cb(new TypeError("Aticle is null"))
+} 
+else if (typeof(article) !==  "object"){
+  cb(new TypeError ("Article is not an Object"))
+}else {
+  cb(null,buildArticle(article) )
+}
+return 0;
+}
+
+
+function buildArticle(article){
+  var articleElement = document.createElement('div');
+  var articleTitle = document.createElement('p');
+  var articleImage = document.createElement('img');
+  var articleDescription = document.createElement('p');
+  var articleLink = document.createElement('a');
+  articleTitle.textContent = article.title;
+  articleDescription.textContent = article.description;
+  articleImage.src = article.urlToImage;
+  articleLink.href = article.url;
+  articleLink.appendChild(articleImage);
+  articleElement.appendChild(articleLink);
+  articleElement.appendChild(articleTitle);
+  articleElement.appendChild(articleDescription);
+  return articleElement;
+}
+
+
+
+
