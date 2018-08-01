@@ -56,7 +56,10 @@ function handleclientApi(req, res) {
     res.end(JSON.stringify(mainJson));
 }
 
+function handleNotFound(req, res) {
+    res.writeHead(404);
+    res.end(JSON.stringify(mainJson));
+}
 
 
-
-module.exports = {handleHome, handleNews, serveFiles, handleclientApi };
+module.exports = {handleHome, handleNews, serveFiles, handleclientApi,handleNotFound };

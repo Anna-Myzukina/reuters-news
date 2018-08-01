@@ -10,9 +10,11 @@ const router = (req, res) => {
     handler.handleNews(req,res);
   }else if(url === '/clientApi'){
     handler.handleclientApi(req,res);
+  }else if(url.contains('public')&& rul.contains('.')){
+    handler.serveFiles(req, res);
+
   }
   else{
-    handler.serveFiles(req, res);
   }
 };
 
