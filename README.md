@@ -38,19 +38,10 @@ Our website that give you ability to read recent news stories from the reuters a
 
 * public:
 
-   *  LOGIN
-           * HTML
+   *  LOGIN [HTML - CSS - JS]
+        
+   *  NEWS  [HTML - CSS - JS]
            
-           * DOM
-           
-           * CSS
-
-   *  NEWS
-           * HTML
-           
-           * DOM
-           
-           * CSS  
           
    
 * SRC:
