@@ -78,14 +78,13 @@ test('#4',(t) => {
         });
 
 
-    // test('test page undifined', (t) => {
-    //     supertest(router)
-    //         .get("/elephants")
-    //         .expect(404)
-    //         .expect('Content-Type', /html/)
-    //         .end((err, res) => {
-    //             t.error(err)
-    //             t.equal(res.statusCode, 404, 'unknown uri');
-    //             t.end();
-    //         });
-    // });
+    test('#7', (t) => {
+        supertest(router)
+            .get("/dogdog")
+            .expect(404)
+            .end((err, res) => {
+                t.error(err)
+                t.equal(res.statusCode, 404, 'unknown uri');
+                t.end();
+            });
+    });
