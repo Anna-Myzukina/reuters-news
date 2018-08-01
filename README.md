@@ -40,12 +40,16 @@ Our website that give you ability to read recent news stories from the reuters a
 
    *  LOGIN
            * HTML
+           
            * DOM
+           
            * CSS
 
    *  NEWS
            * HTML
+           
            * DOM
+           
            * CSS  
           
    
