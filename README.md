@@ -63,7 +63,7 @@ Our website that give you ability to read recent news stories from the reuters a
 - I would like to know what happen in the world now!!
 ---
 ## Test Coverage
-![Image of test](hthttp://www10.0zz0.com/2018/08/01/15/893440674.png)
+![Image of test](http://www10.0zz0.com/2018/08/01/15/893440674.png)
 ---
 
 ## WHAT DID WE LEARN ?
