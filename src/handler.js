@@ -1,4 +1,3 @@
-var http = require("http");
 var fs = require("fs");
 var path = require("path");
 
@@ -49,15 +48,10 @@ function serveFiles(req, res) {
 }
 
 function handleclientApi(req, res) {
-  var like = "";
-  req.on("data", function(chunkOfData) {
-    like += chunkOfData;
-  });
-  req.on("end", function() {
-    var result = filterJson(mainJson,like);
+  var mainJson = require("../news.json");
     res.writeHead(200, { "content-type": "application/json" });
-    res.end(JSON.stringify(result));
-  });
+    res.end(JSON.stringify(mainJson));
+
 }
 
 

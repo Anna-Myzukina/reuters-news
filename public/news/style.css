@@ -1,0 +1,120 @@
+body{
+background: url("https://www.pressgazette.co.uk/wp-content/uploads/2018/03/RTSXGFG-e1522228577639.jpg");
+background-size: cover;
+
+}
+
+
+header{
+    text-align: center;
+    margin: 100px 0 100px;
+
+}
+
+header h1{
+    color:white;
+    font-size: 36pt;
+    text-shadow: 1px 1px black;
+
+}
+
+img{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width:400px;
+    height: 350px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 10px;
+    margin: 0 5% 0 5%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    background: black;
+    padding-top: 50px;
+    opacity: .7;
+
+}
+.container p{
+    margin: 3% 15% 3% 15%;
+    font-size: 12pt;
+    color:white;
+    text-shadow: 2px 2px black;
+}
+
+.container p:first-of-type{
+    margin: 3% 15% 3% 15%;
+    font-size: 22pt;
+    color:white;
+}
+
+
+.container div{
+    text-align: center;
+}
+
+@media screen and (min-width: 1250px) and (max-width: 1500px) {
+    .container {
+    margin-left: 5%;
+    margin-right: 5%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 10px;
+    }
+    img{
+        width:400px;
+        height: 300px;
+    }
+    }
+
+
+@media screen and (max-width: 600px) {
+.container {
+margin-left: 5%;
+margin-right: 5%;
+display: grid;
+grid-template-columns: 100%;
+grid-gap: 10px;
+}
+
+img{
+    width:300px;
+    height: 200px;
+}
+
+}
+
+
+
+@media screen and (min-width: 601px) and (max-width: 800px) {
+.container {
+margin-left: 5%;
+margin-right: 5%;
+display: grid;
+grid-template-columns: 100%;
+grid-gap: 10px;
+}
+img{
+    width:320px;
+    height: 250px;
+}
+}
+
+@media screen and (min-width: 801px) and (max-width: 1024px) {
+.container {
+margin-left: 5%;
+margin-right: 5%;
+display: grid;
+grid-template-columns: 50% 50%;
+grid-gap: 10px;
+}
+img{
+    width:320px;
+    height: 250px;
+}
+}
+
